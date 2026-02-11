@@ -10,8 +10,10 @@ const PORT = process.env.PORT || 5001
 
 connectDB()
 
-app.use("/api/notes", notesRoutes)
+//middleware
+app.use(express.json())
 
+app.use("/api/notes", notesRoutes)
 //Endpoint - combination of URL + HTTP meathod that lets the client interact with a specific resource
 
 app.listen(PORT, ()=>{
